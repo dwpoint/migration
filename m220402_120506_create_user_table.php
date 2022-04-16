@@ -20,6 +20,7 @@ class m220402_120506_create_user_table extends Migration
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string(255)->notNull(),
             'password_reset_token' => $this->string(255)->unique()->defaultValue(null),
+            'key' => $this->string(128)->notNull(),
             'email' => $this->string(255)->unique()->notNull(),
             'status' => $this->smallInteger(6)->notNull()->defaultValue(10),
             'balance' => $this->float()->notNull()->defaultValue(0),
